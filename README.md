@@ -37,19 +37,73 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+FULL ADDER:
+
+<img width="464" height="203" alt="image" src="https://github.com/user-attachments/assets/1c8f1558-5890-460a-89ce-8be93a555f68" />
+
+FULL SUBTRACTOR
+<img width="455" height="475" alt="image" src="https://github.com/user-attachments/assets/cc440300-723d-4dc6-a527-6c5d798fd56c" />
+
+
 
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **Program:**
+Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using
+Verilog programming.
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+i)FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+
+input a,b,cin;
+
+output sum,carry;
+
+assign sum=( (a ^ b)^cin);
+
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+
+input a,b,bin;
+
+output difference,borrow;
+
+assign difference= ( (a ^ b)^bin);
+
+assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+
+endmodule
+
 
 **RTL Schematic**
+FULL ADDER:
+<img width="1234" height="426" alt="image" src="https://github.com/user-attachments/assets/97f56040-a6c7-4f5d-8602-e64094752420" />
+
+FULL SUBTRACTOR
+<img width="1285" height="335" alt="image" src="https://github.com/user-attachments/assets/a3d1d24b-6cda-45fe-afcb-9be12a290d93" />
 
 **Output Timing Waveform**
+FULL ADDER:
+<img width="1305" height="314" alt="image" src="https://github.com/user-attachments/assets/c3713f56-9465-40b5-b6d4-606de4651484" />
+FULL SUBTRACTOR:
+<img width="1306" height="275" alt="image" src="https://github.com/user-attachments/assets/1af3db45-444c-4302-aed3-ac8b135c343b" />
+
 
 **Result:**
 
